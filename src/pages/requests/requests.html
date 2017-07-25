@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-navbar color="primary_light">
+        <ion-buttons end>
+            <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+        </ion-buttons>
+        <ion-title>My Requests</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card *ngFor="let myReq of requestArr" padding>
+
+        <ion-card-header>
+            <h3 class="req_owner">{{myReq.owner}}
+                <ion-icon name="checkmark" color="secondary" item-right></ion-icon>
+            </h3>
+            <hr class="hr" />
+        </ion-card-header>
+        <ion-card-content>
+            <h6 class="header_request">Request</h6>
+            <p class="requests">{{myReq.requests + " "}}</p>
+            <hr class="hr" />
+            <h6 class="header_comment">Comment</h6>
+            <p class="owner_comment">{{myReq.comments}}</p>
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>

@@ -1,0 +1,27 @@
+page-send-request {
+    .button {
+        height: 2.0em;
+        font-size: 1.5rem;
+        color: #fff;
+        background-color: #00B8EC;
+        margin: 0rem 0rem;
+        padding: 1.3em 1em;
+        border-radius: 16px;
+    }
+    .request_type {
+        text-align: center;
+        color: #00B8EC;
+        font-weight: bold;
+    }
+    .textarea {
+        border: 1px solid #00B8EC;
+        max-width: 100%;
+        width: 100%;
+        height: 30vh;
+    }
+    // .req_field{
+    //     border-radius: 10px;
+    //     border: 1px solid #00B8EC;
+    //     border-bottom-color: #00B8EC;
+    // }
+}

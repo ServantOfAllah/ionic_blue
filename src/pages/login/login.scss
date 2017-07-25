@@ -1,0 +1,49 @@
+.bg_color{
+    background: linear-gradient(to bottom,  #003859 0%, #005d92 100%);
+    padding-top: 30px;
+}
+.form_icon{
+    color: #005d92;
+    //margin-left: 15px;
+}
+.ion-md-lock, .ion-md-person{
+    margin-left: 15px;
+}
+.list[inset] {
+    margin: 0;
+    border-radius: 0;
+}
+.regLogo{
+    max-height: 400px;
+}
+img, .regLogo {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    top: 12%;
+}
+.signin_btn{
+    box-shadow: #000;
+    padding: 25px;
+    border-bottom: 1px solid #005d92;
+}
+.button {
+    height: 2.8em;
+    font-size: 1.6rem;
+    color: #fff;
+    background-color: #003859;
+    margin: 0rem 0rem;
+    padding: 1.65em 1em;
+}
+.reg_link{
+    color: #fff;
+    text-align: center;
+}
+.reg_btn{
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    font-size: 15px;
+    padding: 10px;
+    background-color: #003859;
+}

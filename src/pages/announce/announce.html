@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-navbar color="primary_light">
+        <ion-buttons start>
+            <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+        </ion-buttons>
+        <ion-title>announce</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <!-- <ion-list class="accordion">
+
+        <ion-list-header *ngFor="let announce of announceList | async; let i = index">
+          <button ion-item detail-none no-lines>
+            <h1>{{announce[0]}}</h1>
+          </button>
+
+            <ion-item-sliding no-lines>
+                <ion-item text-wrap no-lines>
+                    <p text-lowercase>{{announce[1]}}</p>
+                </ion-item>
+                <ion-item-options side="right" no-lines>
+                  <button ion-button color="danger" icon-only (click)="removeAnnouncement(announce.$key)">
+                    <ion-icon name="trash"></ion-icon>
+                  </button>
+                </ion-item-options>
+            </ion-item-sliding>
+
+        </ion-list-header>
+    </ion-list> -->
+
+    <ion-list class="accordion" *ngFor="let d of announceList | async;" (click)="togggleDetails(d)">
+        <ion-list-header>
+            <ion-icon color="primary" item-right [name]="d.icon"></ion-icon>
+            <h2>{{d[0]}}</h2>
+        </ion-list-header>
+        <ion-item-sliding>
+            <ion-item text-wrap>
+                <p *ngIf="d.showDetails" text-lowercase>{{d[1]}}</p>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="danger" icon-only (click)="removeAnnouncement(d.$key)">
+                  <ion-icon name="trash"></ion-icon>
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+
+    </ion-list>
+
+    <ion-fab bottom right egde>
+        <button ion-fab mini *ngIf="canCreate; else fab_template" (click)="createAnnouncement()" color="primary_dark">
+      <ion-icon name="add"></ion-icon>
+    </button>
+    </ion-fab>
+    <ng-template #fab_template>
+        <div></div>
+    </ng-template>
+
+</ion-content>

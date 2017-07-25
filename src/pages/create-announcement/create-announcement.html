@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar color="primary_light">
+    <ion-title>createAnnouncement</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <form class="create_annouce" (ngSubmit)="logForm()">
+      <ion-item>
+        <ion-input type="text" name="title" placeholder="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea name="description" placeholder="post"></ion-textarea>
+      </ion-item>
+      <button class="button is-danger">Cancel</button>
+      <button class="button">post</button>
+    </form>
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-content class="bg_color">
+  <img src="../assets/images/blue1.png" alt="logo" class="regLogo">
+  <ion-footer>
+    <ion-list inset>
+      <ion-item>
+        <ion-label> <ion-icon name="person" class="form_icon"></ion-icon> </ion-label>
+        <ion-input type="text" placeholder="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label> <ion-icon name="person" class="form_icon"></ion-icon> </ion-label>
+        <ion-input type="text" placeholder="username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label> <ion-icon name="lock" class="form_icon"></ion-icon> </ion-label>
+        <ion-input type="password" placeholder="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label> <ion-icon name="lock" class="form_icon"></ion-icon> </ion-label>
+        <ion-input type="password" placeholder="confirm password"></ion-input>
+      </ion-item>
+      <button (click)="gotoLogin()" ion-button full class="signin_btn">REGISTER</button>
+      <button (click)="gotoLogin()" ion-button full class="signin_btn">SIGN IN</button>
+    </ion-list>
+  </ion-footer>
+</ion-content>
