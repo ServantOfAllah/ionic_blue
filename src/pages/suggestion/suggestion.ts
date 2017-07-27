@@ -24,16 +24,21 @@ export class SuggestionPage {
   saveSuggestion(){
     var data = {
       user: this.userDetails.username,
-      comment: this.comment
-    }
-    if(data.user && data.comment){
+      comments: this.comment
+    };
+
+    if(data.user && data.comments != ""){
       //save to to database
+      console.log("from suggestion page ", data.comments);
+      console.log("from suggestion page ", data.user);
+      
     }else{
         let toast = this.toastCtrl.create({
         message: 'Fields cannot be empty',
         duration: 2000
       });
       toast.present();
+      return false;
     }
   }
 

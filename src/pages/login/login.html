@@ -1,22 +1,25 @@
 <ion-content class="bg_color">
-  <img src="../assets/images/blue_logo3.png" alt="logo">
-  <ion-footer>
+    <img src="assets/images/blue_logo3.png" alt="logo">
+    <ion-footer>
 
-  <form [formGroup]='form'>
-    <ion-list inset>
-      <ion-item>
-        <ion-label> <ion-icon name="person" class="form_icon"></ion-icon> </ion-label>
-        <ion-input type="text" placeholder="username" formControlName='username' [(ngModel)]="userData.username"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label> <ion-icon name="lock" class="form_icon"></ion-icon> </ion-label>
-        <ion-input type="password" placeholder="password" formControlName='password' [(ngModel)]="userData.password"></ion-input>
-      </ion-item>
-      <button (click)="goToHome()" ion-button full class="signin_btn">SIGN IN</button>
-      <!--<h5 (click)="goToRegister()" class="reg_btn">No account yet? please register</h5>-->
-    </ion-list>
-  </form>
-  
-  </ion-footer>
+        <form [formGroup]='form'>
+            <ion-list inset>
+                <ion-item>
+                    <ion-label>
+                        <ion-icon name="person" class="form_icon"></ion-icon>
+                    </ion-label>
+                    <ion-input type="text" placeholder="username" formControlName='username' [(ngModel)]="userData.username"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label>
+                        <ion-icon name="lock" class="form_icon"></ion-icon>
+                    </ion-label>
+                    <ion-input type="password" placeholder="password" formControlName='password' [(ngModel)]="userData.password"></ion-input>
+                </ion-item>
+                <button (click)="goToHome()" ion-button full class="signin_btn">SIGN IN</button>
+                <!--<h5 (click)="goToRegister()" class="reg_btn">No account yet? please register</h5>-->
+            </ion-list>
+        </form>
+
+    </ion-footer>
 </ion-content>
-

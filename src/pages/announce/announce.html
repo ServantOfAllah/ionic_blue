@@ -11,27 +11,6 @@
 
 <ion-content>
 
-    <!-- <ion-list class="accordion">
-
-        <ion-list-header *ngFor="let announce of announceList | async; let i = index">
-          <button ion-item detail-none no-lines>
-            <h1>{{announce[0]}}</h1>
-          </button>
-
-            <ion-item-sliding no-lines>
-                <ion-item text-wrap no-lines>
-                    <p text-lowercase>{{announce[1]}}</p>
-                </ion-item>
-                <ion-item-options side="right" no-lines>
-                  <button ion-button color="danger" icon-only (click)="removeAnnouncement(announce.$key)">
-                    <ion-icon name="trash"></ion-icon>
-                  </button>
-                </ion-item-options>
-            </ion-item-sliding>
-
-        </ion-list-header>
-    </ion-list> -->
-
     <ion-list class="accordion" *ngFor="let d of announceList | async;" (click)="togggleDetails(d)">
         <ion-list-header>
             <ion-icon color="primary" item-right [name]="d.icon"></ion-icon>

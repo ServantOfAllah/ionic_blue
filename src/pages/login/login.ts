@@ -48,6 +48,7 @@ export class LoginPage {
   }
 
   goToHome(){
+    // this.navCtrl.setRoot('TabsPage');
     this.submitAttemp = true
       if(this.userData.username && this.userData.password){
         this.authService.postData(this.userData, 'login').then((result)=>{
@@ -55,7 +56,7 @@ export class LoginPage {
           console.log("Response data",this.responseData);
           if(this.responseData.userData){
             localStorage.setItem('userData', JSON.stringify(this.responseData));
-            this.navCtrl.setRoot('TabsPage');
+           this.navCtrl.setRoot('TabsPage');
           }else{
             this.validationToast('please provide valid username and password');
           }
@@ -68,6 +69,6 @@ export class LoginPage {
       }else{
         this.validationToast("fields cannot be empty");
       }
-  }
+   }
 
 }
