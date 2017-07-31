@@ -1,6 +1,5 @@
 page-send-request {
     .button {
-        height: 2.0em;
         font-size: 1.5rem;
         color: #fff;
         background-color: #00B8EC;
@@ -8,10 +7,16 @@ page-send-request {
         padding: 1.3em 1em;
         border-radius: 16px;
     }
+    .item-md .item-button {
+        padding: 0 0.6em;
+        height: 35px;
+        font-size: 1.2rem;
+    }
     .request_type {
         text-align: center;
         color: #00B8EC;
         font-weight: bold;
+        font-size: 20px;
     }
     .textarea {
         border: 1px solid #00B8EC;

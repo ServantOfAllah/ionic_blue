@@ -12,7 +12,7 @@
     <ion-list>
         <ion-item no-lines>
             <!-- <ion-label>Request</ion-label> -->
-            <ion-select [(ngModel)]="request" multiple="true" (ionChange)="requestedItems()">
+            <ion-select [(ngModel)]="request" (ionChange)="requestedItems()">
                 <ion-option placeholder='requests' *ngFor="let items of Request_items">{{items}}</ion-option>
                 <hr class="hr" />
             </ion-select>

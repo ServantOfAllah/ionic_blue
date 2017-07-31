@@ -8,12 +8,12 @@
                 </ion-avatar>
                 <h6 class="user_info_name">{{userDetails.username}}</h6><br>
                 <h6 class="user_info_email">{{userDetails.email}}</h6>
-            </div> 
+            </div>
 
             <ng-template #userDetail>
-                 
-            </ng-template> 
-              
+
+            </ng-template>
+
         </ion-toolbar>
     </ion-header>
 
@@ -21,7 +21,7 @@
         <ion-list no-lines>
             <button ion-item (click)="goToHome()" menuClose><ion-icon class="menu_icons" name="home"></ion-icon>Home</button>
             <button ion-item (click)='goToRequest()' menuClose><ion-icon class="menu_icons" name="done-all"></ion-icon>Request</button>
-            <button ion-item menuClose><ion-icon class="menu_icons" name="information-circle"></ion-icon>About</button>
+            <button ion-item menuClose><ion-icon class="menu_icons" name="information-circle"></ion-icon>Suggestions</button>
             <button ion-item (click)="logout()" menuClose><ion-icon class="menu_icons" name="power"></ion-icon>Log out</button>
         </ion-list>
     </ion-content>

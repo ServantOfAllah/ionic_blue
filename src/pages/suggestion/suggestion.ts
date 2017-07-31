@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 @IonicPage()
 @Component({
@@ -9,9 +10,14 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 export class SuggestionPage {
 
   userDetails: any;
-  comment: string;
+  comment: any;
+  responseData: any;
+  // sugData = { 
+  //   "sug_user":"", 
+  //   "sug_comment":"" 
+  // };
 
-  constructor(private toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private authService: AuthServiceProvider, private toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams) {
     const data = JSON.parse(localStorage.getItem('userData'));
     this.userDetails = data.userData;
   }
@@ -29,6 +35,7 @@ export class SuggestionPage {
 
     if(data.user && data.comments != ""){
       //save to to database
+
       console.log("from suggestion page ", data.comments);
       console.log("from suggestion page ", data.user);
       
@@ -42,6 +49,40 @@ export class SuggestionPage {
     }
   }
 
+  validationToast(msg) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 3000,
+      position: 'bottom'
+    });
+    toast.present();
+  }
+
+  saveSuggest(){
+    var sugData = {
+      sug_user: this.userDetails.user_id,
+      sug_comment: this.comment
+    };
+
+    console.log("Response data comment", sugData.sug_user);
+    console.log("Response data comment", sugData.sug_comment);
+
+    if(sugData.sug_comment){ 
+      this.authService.postData(sugData, 'suggest').then((result)=>{
+          this.responseData = result;
+          console.log("Response data",this.responseData); 
+        }, (err)=>{
+
+      });
+
+    }else{
+        let toast = this.toastCtrl.create({
+        message: 'Comment field cannot be blank',
+        duration: 2000
+      });
+      toast.present();
+    }
+  }
 
 
 }

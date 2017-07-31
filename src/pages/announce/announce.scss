@@ -9,16 +9,20 @@ page-announce {
     //     padding-top: 20px;
     // }
     .item h2 {
-        color: #488aff;
-        padding-left: 20px;
-        font-size: 1.5em;
+        color: #212121;
+        padding: 30px;
+        font-size: 1.8em;
+        text-align: center;
+        //font-weight: bold
     }
     .button {
         height: 30px;
         width: 40px;
     }
     .item p {
-        margin-bottom: 25px;
+        padding-bottom: 40px;
+        color: #424242;
+        text-align: center;
     }
     .list-header-md {
         padding-left: 0;

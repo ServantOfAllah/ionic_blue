@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/v2/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,37 +12,52 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+@font-face {
+    font-family: Lato-Regular;
+    src: url('../assets/fonts/Lato_Regular.ttf') format('ttf');
+}
 
-.menu_icons{
+* {
+    font-family: Lato-Regular;
+}
+
+.menu_icons {
     //color: #00B8EC;
     color: #2a2a2a;
     padding: 0 30px 0 20px;
     font-weight: bold;
 }
-.user_info{
+
+.user_info {
     padding-left: 30px;
     padding-bottom: 5px;
     float: left;
 }
-.user_info_name{
+
+.user_info_name {
     padding: 10px 0;
     color: #fff;
     letter-spacing: 4px;
     font-weight: bold;
 }
-.user_info_email{
+
+.user_info_email {
     color: #e2e2e2;
 }
-.user_info h6{
+
+.user_info h6 {
     margin: 0;
     font-weight: normal;
     display: inline;
     line-height: 1.3em;
 }
-.menu_logo{
+
+.menu_logo {
     height: 200px;
 }
-.avatar, .avatar_icon {
+
+.avatar,
+.avatar_icon {
     padding-left: 0;
     display: inline;
     line-height: 1;

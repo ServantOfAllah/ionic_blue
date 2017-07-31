@@ -35,13 +35,8 @@ export class RequestsPage {
   }
 
   ionViewDidLoad() {
-    console.log("from request page", this.requestArr)
-
-    console.log(this.comments);
-    console.log(this.owners);
-    console.log(this.requests);
-
     console.log('ionViewDidLoad RequestsPage');
+    console.log("from request page", this.requestArr);
   }
 
 }

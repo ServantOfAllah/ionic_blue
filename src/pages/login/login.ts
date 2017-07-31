@@ -53,7 +53,7 @@ export class LoginPage {
       if(this.userData.username && this.userData.password){
         this.authService.postData(this.userData, 'login').then((result)=>{
           this.responseData = result;
-          console.log("Response data",this.responseData);
+          console.log("Response data ",this.responseData);
           if(this.responseData.userData){
             localStorage.setItem('userData', JSON.stringify(this.responseData));
            this.navCtrl.setRoot('TabsPage');

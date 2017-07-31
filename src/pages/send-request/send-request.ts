@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 @IonicPage()
 @Component({
@@ -11,16 +12,20 @@ export class SendRequestPage {
 
   userDetails: any;
   userRequests: any;
-  request: any;
+  request: string;
   comment: any;
   isBtnActive: boolean = false;
+  responseData: any;
+  userReq: string;
 
   Request_items = ["laptop", "mobile", "simcard"];
   requestArr = [];
 
-  constructor(private toastCtrl: ToastController, private storage: Storage, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private authService: AuthServiceProvider, private toastCtrl: ToastController, private storage: Storage, public navCtrl: NavController, public navParams: NavParams) {
     const data = JSON.parse(localStorage.getItem('userData'));
     this.userDetails = data.userData;
+
+    console.log("from requeest constructor ", this.request);
 
   }
 
@@ -29,27 +34,28 @@ export class SendRequestPage {
   }
 
   saveRequest(){
-    var data = {
-      comments: this.comment,
-      owner: this.userDetails.username,
-      requests: this.request
+    var userRequest = {
+      req_user: this.userDetails.user_id,
+      req_item: this.request,
+      comments: this.comment
     };
+    
+    console.log("req info ", userRequest );
 
-    if(data.comments && data.requests.length > 0){
-      this.isBtnActive = true;
-      //saving the requests to an array
-      this.requestArr.unshift(data);
+    if(userRequest.comments && userRequest.req_item){
+      //saving the requests to an array / DB
+      this.authService.postData(userRequest, 'request').then((result)=>{
+          this.responseData = result;
+          console.log("Response data", this.responseData); 
+        }, (err)=>{
+
+      });
+
+      this.requestArr.unshift(userRequest);
       console.log(this.requestArr);
-      //saving the array to localstorage
-      localStorage.setItem('userRequestArray', JSON.stringify(this.requestArr));
-      this.comment = "";
-      this.request.length == 0;
 
-      console.log("from send request page", this.request);
-      console.log("from send request page", this.comment);
-      console.log("from send request page", this.userDetails.username);
-
-      this.navCtrl.push('RequestsPage', data);
+      //pushing the user erequests to the next page
+      this.navCtrl.push('RequestsPage', userRequest);
     }else{
         this.isBtnActive = false;
         let toast = this.toastCtrl.create({
