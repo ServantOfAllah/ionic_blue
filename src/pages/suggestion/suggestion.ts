@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 @IonicPage()
@@ -17,7 +17,7 @@ export class SuggestionPage {
   //   "sug_comment":"" 
   // };
 
-  constructor(private authService: AuthServiceProvider, private toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private loadCtrl: LoadingController, private authService: AuthServiceProvider, private toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams) {
     const data = JSON.parse(localStorage.getItem('userData'));
     this.userDetails = data.userData;
   }
@@ -25,6 +25,26 @@ export class SuggestionPage {
   ionViewDidLoad() {
     console.log("from suggestionpage", this.userDetails)
     console.log('ionViewDidLoad SuggestionPage');
+  }
+
+  presentLoading(){
+    let loader = this.loadCtrl.create({
+      spinner:'dots',
+      content: 'Please wait',
+      duration: 2500
+    });
+    loader.present();
+
+    setTimeout(()=>{
+      let toast1 = this.toastCtrl.create({
+        message: 'Suggestion created successfully',
+        duration: 2000
+      });
+      toast1.present();
+    })
+    setTimeout(() => {
+    this.navCtrl.setRoot('TabsPage');
+    }, 3000);
   }
 
   saveSuggestion(){
@@ -74,6 +94,8 @@ export class SuggestionPage {
         }, (err)=>{
 
       });
+
+      this.presentLoading();
 
     }else{
         let toast = this.toastCtrl.create({

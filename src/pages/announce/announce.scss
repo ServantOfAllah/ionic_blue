@@ -11,9 +11,12 @@ page-announce {
     .item h2 {
         color: #212121;
         padding: 30px;
-        font-size: 1.8em;
+        padding-bottom: 10px;
+        font-size: 1.6em;
         text-align: center;
-        //font-weight: bold
+        font-weight: semi-bold;
+        color: #003859;
+        letter-spacing: 2px;
     }
     .button {
         height: 30px;
@@ -22,7 +25,8 @@ page-announce {
     .item p {
         padding-bottom: 40px;
         color: #424242;
-        text-align: center;
+        text-align: left;
+        letter-spacing: 1.5px;
     }
     .list-header-md {
         padding-left: 0;

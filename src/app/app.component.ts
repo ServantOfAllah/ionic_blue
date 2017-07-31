@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform} from 'ionic-angular';
+import { Nav, Platform, ModalController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -16,7 +16,7 @@ export class MyApp {
 
   isUserData = false;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(private modalCtrl:ModalController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
     const data = JSON.parse(localStorage.getItem('userData'));
     console.log("app page:", data);
@@ -53,6 +53,11 @@ export class MyApp {
     // }
     // console.log("first:", this.userDetails);
     // console.log("second:", this.userDetails.name); 
+  }
+
+  openVisitModal(){
+    const visitorModal = this.modalCtrl.create('Visitors');
+    visitorModal.present();
   }
 
   backToLogin(){

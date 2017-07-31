@@ -15,7 +15,7 @@
     <ion-list>
         <ion-item>
             <ion-label>
-                <h4>{{userDetails.username}}</h4>
+                <p class="user">{{userDetails.username}}</p>
             </ion-label>
         </ion-item>
         <ion-item>
@@ -23,7 +23,7 @@
             </ion-textarea>
         </ion-item>
         <ion-item>
-            <button ion-button full large (click)="saveSuggest()" class="make_sugg">Make suggestion</button>
+            <button ion-button block (click)="saveSuggest()" class="make_sugg">submit</button>
         </ion-item>
     </ion-list>
 

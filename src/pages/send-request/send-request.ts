@@ -25,8 +25,6 @@ export class SendRequestPage {
     const data = JSON.parse(localStorage.getItem('userData'));
     this.userDetails = data.userData;
 
-    console.log("from requeest constructor ", this.request);
-
   }
 
   requestedItems(){
