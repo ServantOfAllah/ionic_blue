@@ -6,9 +6,6 @@
 
 
 <ion-content padding>
-    <!-- <ion-item>
-        <p class="request_type">Request Type</p>
-    </ion-item> -->
     <ion-list>
         <ion-item no-lines>
             <ion-label>Request</ion-label>
@@ -18,29 +15,11 @@
             </ion-select>
         </ion-item>
         <ion-item no-lines>
-            <ion-textarea class="textarea" placeholder="comment..." [(ngModel)]="comment" rows="5"></ion-textarea>
+            <ion-textarea class="textarea" placeholder="comment..." [(ngModel)]="comment" rows="10" col="100"></ion-textarea>
         </ion-item>
         <ion-item>
-            <div *ngIf="isBtnActive; else isEmpty">
-                <button (click)="saveRequest()" ion-button icon-right full>Send
-        <ion-icon name="send"></ion-icon>
-        </button>
-            </div>
-            <ng-template #isEmpty>
-                <button [disabled]="isBtnActive" (click)="saveRequest()" ion-button full icon-right>Send
-        <ion-icon name="send"></ion-icon>
-        </button>
-            </ng-template>
+            <button ion-button (click)="saveRequest()" icon-right block>Send<ion-icon name="send"></ion-icon>
+            </button>
         </ion-item>
     </ion-list>
-
-    <!-- <ion-card *ngFor="let myReq of requestArr" padding>
-    <ion-card-header>
-    <h4>By: {{myReq.owner}}</h4><hr/>
-    </ion-card-header>
-      <h6>Comment</h6>
-      <p>{{myReq.comments}}</p><hr/>
-      <h6>Request</h6>
-      <p>{{myReq.requests}}</p>
-  </ion-card> -->
 </ion-content>

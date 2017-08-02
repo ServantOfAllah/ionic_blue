@@ -1,21 +1,20 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
-import { Storage } from '@ionic/storage';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 @IonicPage()
 @Component({
-  selector: 'page-requests',
-  templateUrl: 'requests.html',
+  selector: 'page-suggsest-list',
+  templateUrl: 'suggsest-list.html',
 })
-export class RequestsPage {
+export class SuggsestList {
 
   public userDetails: any;
   public responseData: any;
   public dataSet: any;
   userPostData: any;
 
-  constructor(private toastCtrl: ToastController, private authService: AuthServiceProvider, private storage: Storage, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private toastCtrl: ToastController, private authService: AuthServiceProvider, public navCtrl: NavController, public navParams: NavParams) {
     const data = JSON.parse(localStorage.getItem('userData'));
     this.userDetails = data.userData;
 
@@ -23,13 +22,12 @@ export class RequestsPage {
       "user_id": this.userDetails.user_id, 
       "token": this.userDetails.token
     };
+    console.log(this.userPostData);
     this.getFeed();
-
-    console.log("from request page in constructor")
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RequestsPage');
+    console.log('ionViewDidLoad SuggsestList');
   }
 
   doRefresh(refresher){
@@ -41,7 +39,7 @@ export class RequestsPage {
   }
 
   getFeed(){
-    this.authService.postData(this.userPostData, "feed").then((result)=>{
+    this.authService.postData(this.userPostData, "feedSuggest").then((result)=>{
       this.responseData = result;
       if(this.responseData.feedData){
         console.log("response", this.responseData);
@@ -50,7 +48,7 @@ export class RequestsPage {
       }
       else{
         let toast = this.toastCtrl.create({
-        message: 'No request has been made yet...',
+        message: 'No suggestion has been made yet...',
         duration: 4000
       });
       toast.present();

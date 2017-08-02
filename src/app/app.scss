@@ -1,72 +1,93 @@
-// http://ionicframework.com/docs/v2/theming/
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
-@font-face {
-    font-family: Lato-Regular;
-    src: url('../assets/fonts/Lato_Regular.ttf') format('ttf');
-}
-
-* {
-    font-family: Lato-Regular;
-}
-
-.menu_icons {
-    //color: #00B8EC;
-    color: #005d92;
-    padding: 0 50px 0 10px;
-    //font-weight: bold;
-    margin-left: 0;
-}
-
-.sideMenuText {
-    font-family: Lato-Semibold;
-    color: #212121;
-}
-
-.user_info {
-    padding-left: 30px;
-    padding-bottom: 5px;
-    float: left;
-}
-
-.user_info_name {
-    padding: 10px 0;
-    color: #fff;
-    letter-spacing: 4px;
-    font-weight: bold;
-}
-
-.user_info_email {
-    color: #e2e2e2;
-}
-
-.user_info h6 {
-    margin: 0;
-    font-weight: normal;
-    display: inline;
-    line-height: 1.3em;
-}
-
-.menu_logo {
-    height: 200px;
-}
-
-.avatar,
-.avatar_icon {
-    padding-left: 0;
-    display: inline;
-    line-height: 1;
-    font-size: 2em;
-    color: #fff;
-}
+    // http://ionicframework.com/docs/v2/theming/
+    // App Global Sass
+    // --------------------------------------------------
+    // Put style rules here that you want to apply globally. These
+    // styles are for the entire app and not just one component.
+    // Additionally, this file can be also used as an entry point
+    // to import other Sass files to be included in the output CSS.
+    //
+    // Shared Sass variables, which can be used to adjust Ionic's
+    // default Sass variables, belong in "theme/variables.scss".
+    //
+    // To declare rules for a specific mode, create a child rule
+    // for the .md, .ios, or .wp mode classes. The mode class is
+    // automatically applied to the <body> element in the app.
+    @font-face {
+        font-family: Lato-Regular;
+        src: url('../assets/fonts/Lato_Regular.ttf') format('ttf');
+    }
+    
+    * {
+        font-family: Lato-Regular;
+    }
+    
+    sideMenuList {
+        margin: 0;
+        padding: 0;
+        display: block;
+        list-style-type: none;
+        padding-top: 30px;
+    }
+    
+    .menu_icons {
+        color: #005d92;
+        padding: 0 50px 0 10px;
+        margin-left: 0;
+    }
+    
+    .sideMenuText {
+        font-family: Lato-Semibold;
+        color: #006380;
+        font-weight: 600;
+    }
+    
+    .div_circle {
+        width: 100px;
+        height: 100px;
+        background: #fff;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+        margin: 15px 0;
+    }
+    
+    .user_info {
+        padding-left: 30px;
+        padding-bottom: 5px;
+        float: left;
+    }
+    
+    .user_info_name {
+        padding: 10px 5px;
+        color: #fff;
+        letter-spacing: 1px;
+        text-transform: lowercase;
+        font-weight: normal;
+        text-align: center;
+        font-size: 1.5em;
+    }
+    
+    .user_info_email {
+        padding: 10px 5px;
+        color: #e2e2e2;
+    }
+    
+    .user_info h6 {
+        margin: 0;
+        font-weight: normal;
+        display: inline;
+        line-height: 1.3em;
+    }
+    
+    .menu_logo {
+        height: 200px;
+    }
+    
+    .avatar,
+    .avatar_icon {
+        padding-left: 0;
+        display: inline;
+        line-height: 1;
+        font-size: 2em;
+        color: #fff;
+    }

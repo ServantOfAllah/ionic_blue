@@ -1,17 +1,34 @@
 page-requests {
-    .req_owner{
+    $refresher-border-color: #fff;
+    $refresher-text-color: #0D47A1;
+    .req_owner {
         text-align: left;
         font-weight: bold;
         font-size: 1em;
         color: #2196F3;
     }
     .hr {
-        background-color: #2196F3;
+        //background-color: #2196F3;
     }
-    .header_comment, .header_request{
+    .header_comment,
+    .header_request {
         color: #0D47A1;
+        font-weight: bold;
     }
-    .owner_comment{
-        font-family: serif;   
+    .card-content {
+        padding: 10px;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        text-align: center;
+        //background-color: #06c0f5;
+    }
+    .card-header {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #fff;
+        letter-spacing: 1px;
+        padding-bottom: 0;
+        text-align: center;
+        //background-color: #00b8ec;
     }
 }

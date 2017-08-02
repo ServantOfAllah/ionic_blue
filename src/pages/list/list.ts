@@ -30,11 +30,11 @@ export class ListPage {
       title: 'Select a Query',
       buttons:[
         {
-          text: 'Send a request',
+          text: 'Ask for support', 
           role: 'Destructive', 
           handler: () => {
-            this.navCtrl.push('SendRequestPage');
-            console.log('destructive clicked');
+            console.log('support clicked');
+            this.navCtrl.push('SendSupport');
           }
         },
         {
@@ -46,10 +46,11 @@ export class ListPage {
           }
         },
         {
-          text: 'Ask for support', 
+          text: 'Send a request',
           role: 'Destructive', 
           handler: () => {
-            console.log('support clicked');
+            this.navCtrl.push('SendRequestPage');
+            console.log('destructive clicked');
           }
         },
         {

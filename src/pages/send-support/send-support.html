@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar color="primary_light">
+        <ion-title>Ask for Support</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-item no-lines>
+            <ion-label>Support</ion-label>
+            <ion-select [(ngModel)]="support" (ionChange)="supportList()">
+                <ion-option placeholder='support' *ngFor="let items of Support_list">{{items}}</ion-option>
+                <hr class="hr" />
+            </ion-select>
+        </ion-item>
+        <ion-item no-lines>
+            <ion-textarea class="textarea" placeholder="your comment..." [(ngModel)]="comment" rows="10" col="100"></ion-textarea>
+        </ion-item>
+        <ion-item>
+            <button ion-button (click)="saveSupport()" icon-right block>Send<ion-icon name="send"></ion-icon>
+            </button>
+        </ion-item>
+    </ion-list>
+</ion-content>

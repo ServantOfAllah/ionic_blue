@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
@@ -19,9 +19,8 @@ export class SendRequestPage {
   userReq: string;
 
   Request_items = ["laptop", "mobile", "simcard"];
-  requestArr = [];
 
-  constructor(private authService: AuthServiceProvider, private toastCtrl: ToastController, private storage: Storage, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private loadCtrl: LoadingController, private authService: AuthServiceProvider, private toastCtrl: ToastController, private storage: Storage, public navCtrl: NavController, public navParams: NavParams) {
     const data = JSON.parse(localStorage.getItem('userData'));
     this.userDetails = data.userData;
 
@@ -29,6 +28,26 @@ export class SendRequestPage {
 
   requestedItems(){
     //console.log(this.request);
+  }
+
+  presentLoading(){
+    let loader = this.loadCtrl.create({
+      spinner:'dots',
+      content: 'Please wait',
+      duration: 2500
+    });
+    loader.present();
+
+    setTimeout(()=>{
+      let toast1 = this.toastCtrl.create({
+        message: 'Request was created successfully',
+        duration: 2000
+      });
+      toast1.present();
+    })
+    setTimeout(() => {
+    this.navCtrl.setRoot('TabsPage');
+    }, 3000);
   }
 
   saveRequest(){
@@ -48,12 +67,9 @@ export class SendRequestPage {
         }, (err)=>{
 
       });
-
-      this.requestArr.unshift(userRequest);
-      console.log(this.requestArr);
-
-      //pushing the user erequests to the next page
-      this.navCtrl.push('RequestsPage', userRequest);
+        
+      userRequest.comments == "";
+      this.presentLoading();
     }else{
         this.isBtnActive = false;
         let toast = this.toastCtrl.create({

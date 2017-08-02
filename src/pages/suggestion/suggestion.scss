@@ -9,12 +9,21 @@ page-suggestion {
         margin-top: 5px;
         padding: 15px 20px;
         background-color: #00B8EC;
+        height: 35px;
         width: 100%;
+    }
+    .item .item-button {
+        padding: 0 0.6em;
+        height: 35px;
+        font-size: 1.4rem;
     }
     .label {
         margin-right: 0;
     }
     .user {
-        size: 2.6em;
+        //text-transform: uppercase;
+        font-size: 1.4em;
+        color: #9E9E9E;
+        text-align: center;
     }
 }

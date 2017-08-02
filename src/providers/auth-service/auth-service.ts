@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-let apiUrl = "http://localhost/PHP-Slim-Restful/api/";
+//let apiUrl = "http://localhost/PHP-Slim-Restful/api/";
 //let apiUrl = "http://blue.ae/blueapp/restful/api/";
 //let apiUrl = "http://alserkal-group.com/restful/api/";
-//let apiUrl = "https://halalguru.000webhostapp.com/blue/api/restful/";
+let apiUrl = "https://halalguru.000webhostapp.com/blue/api/restful/";
 
 @Injectable()
 export class AuthServiceProvider {
@@ -20,6 +20,7 @@ export class AuthServiceProvider {
       this.http.post(apiUrl+type, JSON.stringify(credemtials), {headers: headers}).subscribe(res =>{
         resolve(res.json());
       }, (err)=>{
+        console.log("from the auth class");
         reject(err);
       });
     });

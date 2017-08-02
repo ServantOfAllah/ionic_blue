@@ -1,8 +1,21 @@
 page-visitors {
     .completeBtn {
-        //margin: 0 auto;
+        margin: 20 auto;
+        background-color: #005d92;
+        padding: 20px 0;
+        height: 100%;
     }
     .mainContent {
         padding: 50px 20px 20px 10px;
+    }
+    .label {
+        margin: 0;
+    }
+    .item-md .item-button {
+        height: 35px;
+        font-size: 1.2rem;
+    }
+    .item-inner {
+        padding: 0;
     }
 }

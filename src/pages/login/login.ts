@@ -25,6 +25,12 @@ export class LoginPage {
     });
   }
 
+  ionViewDidLoad(){
+    if(localStorage.getItem('userData')){
+      this.navCtrl.setRoot("TabsPage");
+    }
+  }
+
   goToRegister(): void{
     this.navCtrl.push('RegisterPage');
   }

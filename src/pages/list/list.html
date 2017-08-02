@@ -1,63 +1,63 @@
-<ion-header> 
-  <ion-navbar color="primary_light">
-    <ion-buttons start>
-      <button ion-button icon-only menuToggle>
+<ion-header>
+    <ion-navbar color="primary_light">
+        <ion-buttons start>
+            <button ion-button icon-only menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
-    </ion-buttons>
-    <ion-title>list</ion-title>
-  </ion-navbar>
+        </ion-buttons>
+        <ion-title>home</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content>
-<!-- {{userDetails.username}} -->
-<ion-list>
-  <ion-item class="list-options">
-    IT
-    <ion-icon (click)="presentActionSheet()" class="icon_more" name="md-more"></ion-icon>
-  </ion-item>
-</ion-list>
+    <!-- {{userDetails.username}} -->
+    <ion-list (click)="presentActionSheet()">
+        <ion-item class="list-options">
+            IT
+            <ion-icon class="icon_more" name="md-more"></ion-icon>
+        </ion-item>
+    </ion-list>
 
-<ion-list>
-  <ion-item class="list-options">
-    Human Resources
-    <ion-icon (click)="presentActionSheet()" class="icon_more" name="md-more"></ion-icon>
-  </ion-item>
-</ion-list>
+    <ion-list (click)="presentActionSheet()">
+        <ion-item class="list-options">
+            Human Resources
+            <ion-icon class="icon_more" name="md-more"></ion-icon>
+        </ion-item>
+    </ion-list>
 
-<ion-list>
-  <ion-item class="list-options">
-    Sales
-    <ion-icon (click)="presentActionSheet()" class="icon_more" name="md-more"></ion-icon>
-  </ion-item>
-</ion-list>
+    <ion-list (click)="presentActionSheet()">
+        <ion-item class="list-options">
+            Sales
+            <ion-icon class="icon_more" name="md-more"></ion-icon>
+        </ion-item>
+    </ion-list>
 
-<ion-list>
-  <ion-item class="list-options">
-    Marketing
-    <ion-icon (click)="presentActionSheet()" class="icon_more" name="md-more"></ion-icon>
-  </ion-item>
-</ion-list>
+    <ion-list (click)="presentActionSheet()">
+        <ion-item class="list-options marketting">
+            Marketing
+            <ion-icon class="icon_more" name="md-more"></ion-icon>
+        </ion-item>
+    </ion-list>
 
-<ion-list>
-  <ion-item class="list-options">
-    Operation
-    <ion-icon (click)="presentActionSheet()" class="icon_more" name="md-more"></ion-icon>
-  </ion-item>
-</ion-list>
+    <ion-list (click)="presentActionSheet()">
+        <ion-item class="list-options">
+            Operation
+            <ion-icon (click)="presentActionSheet()" class="icon_more" name="md-more"></ion-icon>
+        </ion-item>
+    </ion-list>
 
-<ion-list>
-  <ion-item class="list-options">
-    Accounting
-    <ion-icon (click)="presentActionSheet()" class="icon_more" name="md-more"></ion-icon>
-  </ion-item>
-</ion-list>
+    <ion-list (click)="presentActionSheet()">
+        <ion-item class="list-options">
+            Accounting
+            <ion-icon (click)="presentActionSheet()" class="icon_more" name="md-more"></ion-icon>
+        </ion-item>
+    </ion-list>
 
-<ion-list>
-  <ion-item class="list-options">
-    Manager
-    <ion-icon (click)="presentActionSheet()" class="icon_more" name="md-more"></ion-icon>
-  </ion-item>
-</ion-list>
+    <ion-list (click)="presentActionSheet()">
+        <ion-item class="list-options">
+            Manager
+            <ion-icon (click)="presentActionSheet()" class="icon_more" name="md-more"></ion-icon>
+        </ion-item>
+    </ion-list>
 
 </ion-content>

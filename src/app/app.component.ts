@@ -37,7 +37,7 @@ export class MyApp {
   }
 
   goToRequest(){
-    this.nav.push('RequestsPage'); 
+    this.nav.setRoot('RequestsPage'); 
   }
 
   goToHome(){
@@ -53,6 +53,10 @@ export class MyApp {
     // }
     // console.log("first:", this.userDetails);
     // console.log("second:", this.userDetails.name); 
+  }
+
+  goToSuggestion(){
+    this.nav.setRoot('SuggsestList');
   }
 
   openVisitModal(){

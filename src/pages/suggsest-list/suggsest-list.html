@@ -5,32 +5,23 @@
         <ion-icon name="menu"></ion-icon>
       </button>
         </ion-buttons>
-        <ion-title>My Requests</ion-title>
+        <ion-title>My Suggestions</ion-title>
     </ion-navbar>
 </ion-header>
-
 
 <ion-content>
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="pull down to refresh" refreshingSpinner="circles" refreshingText="updating...">
         </ion-refresher-content>
     </ion-refresher>
-
     <ion-card *ngFor="let item of dataSet">
         <ion-card-header>
-            <p class="header_request">ID:{{item.req_user}}</p>
+            <p class="header_request">ID:{{item.sug_user}}</p>
             <hr class="hr" />
         </ion-card-header>
         <ion-card-content>
-            <h6 class="header_request">Item request</h6>
-            <p class="requests">{{item.req_item}}</p>
-            <hr class="hr" />
-            <h6 class="header_comment">Comment made</h6>
-            <p class="owner_comment">{{item.comments}}</p>
-            <hr class="hr" />
-            <h6 class="header_comment">Item status</h6>
-            <p class="owner_comment">{{item.status}}</p>
+            <h6 class="header_request">Suggestion</h6>
+            <p class="requests">{{item.sug_comment}}</p>
         </ion-card-content>
     </ion-card>
-
 </ion-content>
