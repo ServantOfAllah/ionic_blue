@@ -60,8 +60,8 @@ export class MyApp {
   }
 
   openVisitModal(){
-    const visitorModal = this.modalCtrl.create('Visitors');
-    visitorModal.present();
+    // const visitorModal = this.modalCtrl.create('Visitors');
+    // visitorModal.present();
   }
 
   backToLogin(){

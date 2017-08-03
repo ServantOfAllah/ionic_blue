@@ -15,41 +15,29 @@
     <ion-list class="mainContent">
         <ion-item>
             <ion-label>Person visiting</ion-label>
-            <ion-select ([ngModel])="employees">
-                <ion-option>Ali</ion-option>
-                <ion-option>Arshad</ion-option>
-                <ion-option>Roma</ion-option>
+            <ion-select [(ngModel)]="employees" (ionChange)="visitorList()">
+                <ion-option *ngFor="let employee of person_visiting">{{employee}}</ion-option>
             </ion-select>
         </ion-item>
         <ion-item>
             <ion-label>Purpose of visit</ion-label>
-            <ion-select ([ngModel])="purpose">
-                <ion-option>Casual</ion-option>
-                <ion-option>Business</ion-option>
-                <ion-option>Socia</ion-option>
-            </ion-select>
-        </ion-item>
-        <ion-item>
-            <ion-label>Location</ion-label>
-            <ion-select ([ngModel])="location">
-                <ion-option>Abu Dhabi</ion-option>
-                <ion-option>Ajman</ion-option>
-                <ion-option>Dubai</ion-option>
+            <ion-select [(ngModel)]="purpose" (ionChange)="visitorList()">
+                <ion-option *ngFor="let purpose of visit_purpose">{{purpose}}</ion-option>
             </ion-select>
         </ion-item>
         <ion-item>
             <!-- <ion-label fixed>Name</ion-label> -->
-            <ion-input type="text" placeholder="Name"></ion-input>
+            <ion-input type="text" [(ngModel)]="v_name" placeholder="Name"></ion-input>
         </ion-item>
         <ion-item>
             <!-- <ion-label fixed>Company</ion-label> -->
-            <ion-input type="text" placeholder="Company"></ion-input>
+            <ion-input type="text" [(ngModel)]="v_company" placeholder="Company"></ion-input>
         </ion-item>
         <ion-item>
-            <ion-textarea placeholder="Comment..." row="10" col="100"></ion-textarea>
+            <ion-textarea [(ngModel)]="v_comment" placeholder="Comment..." row="10" col="100"></ion-textarea>
         </ion-item>
         <ion-item>
-            <button ion-button block class="completeBtn">Complete</button>
+            <button ion-button block (click)="saveVisitor()" class="completeBtn">Complete</button>
         </ion-item>
     </ion-list>
 

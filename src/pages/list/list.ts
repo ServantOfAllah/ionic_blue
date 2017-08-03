@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { ActionSheetController} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
@@ -11,13 +11,12 @@ import { Storage } from '@ionic/storage';
 export class ListPage {
 
   public userDetails: any;
+  canCreate = false;
 
-  constructor(private storage: Storage, public navCtrl: NavController, public navParams: NavParams, private actionSheetCtrl: ActionSheetController) {
-      
-    
-    
+  constructor(private modalCtrl:ModalController, private storage: Storage, public navCtrl: NavController, public navParams: NavParams, private actionSheetCtrl: ActionSheetController) {    
     const data = JSON.parse(localStorage.getItem("userData"));
       this.userDetails = data.userData;
+      this.canCreateVisitors();
   }
 
   ionViewDidLoad() {
@@ -63,6 +62,18 @@ export class ListPage {
       ]
     });
     actionSheet.present();
+  }
+
+  canCreateVisitors(){
+    let user = this.userDetails.can_create
+    if(user != false){
+      this.canCreate = !this.canCreate;
+    }
+  }
+
+  createVisitors(){
+    const visitorModal = this.modalCtrl.create('Visitors');
+    visitorModal.present();
   }
 
 }

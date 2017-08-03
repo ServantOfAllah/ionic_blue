@@ -60,4 +60,13 @@
         </ion-item>
     </ion-list>
 
+    <ion-fab bottom left bottom>
+        <button ion-fab mini *ngIf="canCreate; else fab_template" (click)="createVisitors()" color="primary_dark">
+      <ion-icon name="add"></ion-icon>
+    </button>
+    </ion-fab>
+    <ng-template #fab_template>
+        <div></div>
+    </ng-template>
+
 </ion-content>
