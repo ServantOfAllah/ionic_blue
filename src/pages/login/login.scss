@@ -1,11 +1,20 @@
 page-login {
-    .bg_color {
-        background: linear-gradient(to bottom, #003859 0%, #005d92 100%);
-        padding-top: 30px;
-    }
+    // .bg_color {
+    //     background-image: url("/../assets/images/blue_login_bk.png");
+    //     background-size: cover;
+    //     margin: 0 auto;
+    // }
+    // .bg_color {
+    //     background: linear-gradient(to bottom, #003859 0%, #005d92 100%);
+    //     padding-top: 30px;
+    // }
     .form_icon {
         color: #005d92;
         //margin-left: 15px;
+    }
+    .loginLabel {
+        text-align: center;
+        color: #fff;
     }
     .ion-md-lock,
     .ion-md-person {
@@ -15,7 +24,6 @@ page-login {
         margin: 0;
         border-radius: 0;
     }
-    img,
     .regLogo {
         position: relative;
         margin: 0 auto;
@@ -23,7 +31,8 @@ page-login {
         top: 12%;
     }
     img {
-        max-width: 300px;
+        height: 100%;
+        max-width: 100%;
         border: 0;
     }
     .signin_btn {
@@ -35,7 +44,7 @@ page-login {
         height: 2.8em;
         font-size: 1.6rem;
         color: #fff;
-        background-color: #003859;
+        background-color: #005d92;
         margin: 0rem 0rem;
         padding: 1.65em 1em;
     }

@@ -16,19 +16,19 @@
         </ion-refresher-content>
     </ion-refresher>
 
-    <ion-card *ngFor="let item of dataSet">
-        <ion-card-header>
+    <ion-card class="req_card" *ngFor="let item of dataSet">
+        <!-- <ion-card-header>
             <p class="header_request">ID:{{item.req_user}}</p>
             <hr class="hr" />
-        </ion-card-header>
+        </ion-card-header> -->
         <ion-card-content>
-            <h6 class="header_request">Item request</h6>
+            <h6 class="header_request">Item</h6>
             <p class="requests">{{item.req_item}}</p>
-            <hr class="hr" />
-            <h6 class="header_comment">Comment made</h6>
+            <!-- <hr class="hr" /> -->
+            <h6 class="header_comment">Comment</h6>
             <p class="owner_comment">{{item.comments}}</p>
             <hr class="hr" />
-            <h6 class="header_comment">Item status</h6>
+            <h6 class="header_comment">Status</h6>
             <p class="owner_comment">{{item.status}}</p>
         </ion-card-content>
     </ion-card>

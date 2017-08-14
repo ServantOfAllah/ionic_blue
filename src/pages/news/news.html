@@ -9,6 +9,20 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <p>hello adams...</p>
+<ion-content>
+    <!-- <ion-refresher (ionRefresher)="deRefresher($event)">
+        <ion-refresher-content pullinIcon="arrow-dropdown" refreshingSpinner="circles" refreshingText="Refreshng">
+        </ion-refresher-content>
+    </ion-refresher> -->
+    <ion-list class="animated bounceInUp accordion" *ngFor="let tweets of userTweets" (click)=" togggleDetails(tweets)" no-lines>
+        <ion-list-header>
+            <ion-icon color="primary" item-right [name]="tweets.icon"></ion-icon>
+            <h6 class="date">{{tweets.created_at}}</h6>
+        </ion-list-header>
+        <ion-item *ngIf="tweets.showDetails">
+            <p class="text" text-wrap text-lowercase>{{tweets.text}}</p><br>
+            <!-- <p class="url" text-wrap text-lowercase>{{tweets.entities.urls[1].expanded_url}}</p> -->
+        </ion-item>
+    </ion-list>
+
 </ion-content>

@@ -14,9 +14,9 @@
         <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="pull down to refresh" refreshingSpinner="circles" refreshingText="updating...">
         </ion-refresher-content>
     </ion-refresher>
-    <ion-card *ngFor="let item of dataSet">
+    <ion-card class="sug_list" *ngFor="let item of dataSet">
         <ion-card-header>
-            <p class="header_request">ID:{{item.sug_user}}</p>
+            <p class="header_request">{{item.sug_user}}</p>
             <hr class="hr" />
         </ion-card-header>
         <ion-card-content>

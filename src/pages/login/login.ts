@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, Platform, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { ValidatorsProvider } from '../../providers/validators/validators';
 import { ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
@@ -16,9 +17,10 @@ export class LoginPage {
   submitAttemp: boolean = false;
 
   responseData: any;
+  employeesData: any;
   userData = { "username":"", "password":"", "email":"", "name":"", "groups":"" };
 
-  constructor(private storage: Storage, private toastCtrl: ToastController, private authService: AuthServiceProvider, private navCtrl: NavController, private navParams: NavParams, formBuilder: FormBuilder) {
+  constructor(private validators: ValidatorsProvider, private storage: Storage, private toastCtrl: ToastController, private authService: AuthServiceProvider, private navCtrl: NavController, private navParams: NavParams, formBuilder: FormBuilder) {
     this.form = formBuilder.group({
       username: ['', Validators.compose([Validators.maxLength(20), Validators.pattern('[a-zA-Z]*'), Validators.required])],
       password: ['', Validators.required]
@@ -29,6 +31,11 @@ export class LoginPage {
     if(localStorage.getItem('userData')){
       this.navCtrl.setRoot("TabsPage");
     }
+    else{
+      //this.displayNetworkUpdate('offline');
+      //this.navCtrl.setRoot("LoginPage");
+    }
+
   }
 
   goToRegister(): void{
@@ -55,6 +62,7 @@ export class LoginPage {
 
   goToHome(){
     // this.navCtrl.setRoot('TabsPage');
+    //this.getUserData();
     this.submitAttemp = true
       if(this.userData.username && this.userData.password){
         this.authService.postData(this.userData, 'login').then((result)=>{
@@ -68,13 +76,26 @@ export class LoginPage {
           }
           
         }, (err)=>{
-
+          this.validationToast('No internet connection');
         });
       }else if((this.userData.password = "") || (this.userData.username = "")){
         this.emptyValidationToast();
       }else{
         this.validationToast("fields cannot be empty");
       }
-   }
+ }
+
+//  getUserData(){
+//     this.authService.postData(this.userData, 'getUser').then((result)=>{
+//       this.employeesData = result;
+//       console.log("Employees", this.employeesData);
+//       if(this.employeesData.userData){
+//         localStorage.setItem('employeesData', JSON.stringify(this.employeesData));
+//         console.log("Employees if", this.employeesData);
+//       }
+//     }, (err)=>{
+
+//     });
+//   }
 
 }

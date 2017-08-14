@@ -1,3 +1,4 @@
+page-list {
     .card-header {
         font-size: 1.8rem;
         font-weight: 400;
@@ -5,30 +6,30 @@
         letter-spacing: 1px;
         padding: 10px;
         text-align: center;
+        font-family: Lato;
     }
-    
     .list {
         margin: 0;
     }
-    
-    .it {
-        background-color: cyan;
-    }
-    
-    .sales {
-        background-color: blue;
-    }
-    
+    // .it {
+    //     background-color: #00B8EC;
+    // }
+    // .hr {
+    //     background-color: #1a1a1a;
+    // }
+    // .sales {
+    //     background-color: green;
+    // }
     .icon_more {
         //display: inline-block;
         font-size: 1.6em;
         float: right;
         color: #00B8EC;
     }
-    
     .list-options {
-        padding: 20px 0px;
+        padding: 10px 0px;
         text-align: center;
         font-size: 1.4em;
         color: #212121;
     }
+}

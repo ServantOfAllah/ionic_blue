@@ -18,6 +18,7 @@ import { AngularFireDatabaseModule} from 'angularfire2/database';
 import { AngularFireModule} from 'angularfire2';
 import { FirebaseServiceProvider } from '../providers/firebase-service/firebase-service';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { Network } from '@ionic-native/network';
 
 const firebaseConfig = {
     apiKey: "AIzaSyAEcgTxdDIbpoflr2vlkr_26pqTV40fChk",
@@ -49,6 +50,7 @@ const firebaseConfig = {
     SplashScreen,
     Storage,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Network,
     InAppBrowser,
     TwitterService,
     TwitterProvider,

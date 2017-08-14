@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar color="primary_light">
+        <ion-buttons end>
+            <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+        </ion-buttons>
+        <ion-title>My Visitors</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list class="visiting" *ngFor="let visitors of visitorSet" (click)="togggleDetails(visitors)" no-lines>
+        <ion-list-header no-lines>
+            <ion-icon item-right [name]="visitors.icon"></ion-icon>
+            <span class="vis_name">{{visitors.vis_name}}</span>
+        </ion-list-header>
+        <ion-item class="visit_list" *ngIf="visitors.showDetails">
+            <span>From</span>
+            <p>{{visitors.vis_company}}</p>
+            <span>Purpose</span>
+            <p>{{visitors.vis_purpose}}</p>
+            <span>Comment</span>
+            <p>{{visitors.vis_comments}}</p>
+            <span>{{visitors.vis_date}}</span>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

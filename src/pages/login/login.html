@@ -1,7 +1,6 @@
 <ion-content class="bg_color">
-    <img src="assets/images/blue_logo3.png" alt="logo">
+    <img src="assets/images/blue_login_bk.png" class="animated infinite loginLabel" alt="logo">
     <ion-footer>
-
         <form [formGroup]='form'>
             <ion-list inset>
                 <ion-item>
@@ -12,12 +11,12 @@
                 </ion-item>
                 <ion-item>
                     <ion-label>
-                        <ion-icon name="lock" class="form_icon"></ion-icon>
+                        <ion-icon name="lock" class="form_icon "></ion-icon>
                     </ion-label>
                     <ion-input type="password" placeholder="password" formControlName='password' [(ngModel)]="userData.password"></ion-input>
                 </ion-item>
-                <button (click)="goToHome()" ion-button full class="signin_btn">SIGN IN</button>
-                <!--<h5 (click)="goToRegister()" class="reg_btn">No account yet? please register</h5>-->
+                <button (click)="goToHome()" ion-button full class="signin_btn"><span class="animated shake loginLabel">SIGN IN</span></button>
+                <!--<h5 (click)="goToRegister() " class="reg_btn ">No account yet? please register</h5>-->
             </ion-list>
         </form>
 

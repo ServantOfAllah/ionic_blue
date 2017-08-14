@@ -68,6 +68,10 @@ export class MyApp {
     this.nav.setRoot('LoginPage');
   }
 
+  goToVisitorsList(){
+    this.nav.setRoot('VisitorsList');
+  }
+
   logout(){
     setTimeout(()=>this.backToLogin, 1000);
     this.nav.setRoot('LoginPage');

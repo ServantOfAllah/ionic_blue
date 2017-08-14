@@ -15,8 +15,8 @@
     <ion-list class="mainContent">
         <ion-item>
             <ion-label>Person visiting</ion-label>
-            <ion-select [(ngModel)]="employees" (ionChange)="visitorList()">
-                <ion-option *ngFor="let employee of person_visiting">{{employee}}</ion-option>
+            <ion-select [(ngModel)]="employee_visit" (ionChange)="visitorList()">
+                <ion-option *ngFor="let employee of person_visiting[0]" value={{employee.user_id}}>{{employee.username}}</ion-option>
             </ion-select>
         </ion-item>
         <ion-item>

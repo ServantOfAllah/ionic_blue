@@ -3,29 +3,41 @@ page-requests {
     $refresher-text-color: #0D47A1;
     .req_owner {
         text-align: left;
-        font-weight: bold;
-        font-size: 1em;
-        color: #2196F3;
+        font-weight: normal;
+        font-size: 1.5em;
+        color: #212;
     }
     .hr {
         //background-color: #2196F3;
     }
+    .owner_comment,
+    .owner_request,
+    .requests {
+        color: #fff;
+        font-weight: normal;
+    }
     .header_comment,
     .header_request {
-        color: #0D47A1;
-        font-weight: bold;
+        color: #212;
+        font-weight: normal;
+        font-style: italic;
+        padding-top: 6px;
+    }
+    .req_card {
+        background-color: #00B8EC;
+        border-radius: 5px;
     }
     .card-content {
-        padding: 10px;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         line-height: 1.5;
-        text-align: center;
+        padding-left: 5px 5px 20px 5px;
+        //text-align: center;
         //background-color: #06c0f5;
     }
     .card-header {
         font-size: 1.8rem;
         font-weight: bold;
-        color: #fff;
+        color: #212;
         letter-spacing: 1px;
         padding-bottom: 0;
         text-align: center;

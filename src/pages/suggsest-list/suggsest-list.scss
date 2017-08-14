@@ -1,22 +1,32 @@
 page-suggsest-list {
     .header_request {
-        color: #0D47A1;
-        font-weight: bold;
+        color: #212;
+        font-weight: normal;
+        font-size: 1.2em;
+        font-style: italic;
     }
     .card-header {
-        font-size: 1.8rem;
-        font-weight: bold;
+        font-size: 1.2rem;
+        font-weight: normal;
         color: #fff;
         letter-spacing: 1px;
         padding-bottom: 0;
-        text-align: center;
+        //text-align: center;
         //background-color: #00b8ec;
+    }
+    .sug_list {
+        background-color: #00B8EC;
+        border-radius: 10px;
+    }
+    .card p {
+        color: #fff;
+        font-size: 1.2em;
     }
     .card-content {
         padding: 10px;
         font-size: 1.4rem;
         line-height: 1.5;
-        text-align: center;
+        //text-align: center;
         //background-color: #06c0f5;
     }
 }
