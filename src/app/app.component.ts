@@ -13,8 +13,8 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   public userDetails: any;
-
   isUserData = false;
+  showLength: number = 1;
 
   constructor(private modalCtrl:ModalController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -25,15 +25,18 @@ export class MyApp {
       this.isUserData = !this.isUserData;
     }else{
       this.isUserData = false
-    }
-    console.log("first:", this.userDetails);
-    console.log("second:", this.userDetails.name);
-
+    } 
+    this.length(this.showLength);
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
     });
+  }
+
+  length(vis_len: number): void{
+    this.showLength = vis_len;
+    console.log("length:", this.showLength);
   }
 
   goToRequest(){

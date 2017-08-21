@@ -14,12 +14,15 @@ page-announce {
     //     float: right;
     //     padding: 20px 5px 20px 10px;
     // }
+    .item {
+        padding-left: 20px;
+    }
     .item h2 {
         color: #212121;
-        padding: 30px;
-        padding-bottom: 10px;
+        padding: 15px 0 5px 20px;
+        //padding-bottom: 10px;
         font-size: 1.6em;
-        text-align: center;
+        //text-align: center;
         font-weight: semi-bold;
         color: #003859;
         letter-spacing: 2px;
@@ -29,16 +32,16 @@ page-announce {
         width: 40px;
     }
     .item p {
-        padding-bottom: 40px;
+        padding: 0 0 5px 0;
         color: #424242;
-        text-align: center;
+        //text-align: center;
         letter-spacing: 1.5px;
     }
-    .list-header-md {
+    .list-header {
         padding-left: 0;
         margin-bottom: 0;
     }
-    .label-md {
+    .label {
         margin: 0;
     }
     .ion-label {

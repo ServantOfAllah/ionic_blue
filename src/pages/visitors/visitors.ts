@@ -94,8 +94,8 @@ export class Visitors {
     this.authService.postData(this.userDetails, 'getUser').then((result)=>{
         for(var k in result){
               for(var k2 in result[k]){
-                   console.log("crazy loop",[k,k2,result[k]]);
-                   console.log("theird_elemnt", result[k]);
+                  //  console.log("crazy loop",[k,k2,result[k]]);
+                  //  console.log("theird_elemnt", result[k]);
                    this.employees = [result[k]];
               }
           }
