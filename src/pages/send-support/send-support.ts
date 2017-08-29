@@ -15,12 +15,15 @@ export class SendSupport {
   comment: any;
   responseData: any;
   userReq: string;
+  supList: any;
 
-  Support_list = ["Software", "Hardware", "MS-Office", "ERP"];
+  Support_list = [];
 
   constructor(private loadCtrl: LoadingController, private authService: AuthServiceProvider, private toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams) {
     const data = JSON.parse(localStorage.getItem('userData'));
     this.userDetails = data.userData;
+
+    this.getSupportList();
   }
 
   supportList(){
@@ -29,6 +32,23 @@ export class SendSupport {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SendSupport');
+  }
+
+  getSupportList(){
+    this.authService.postData(this.userDetails, 'getSupport').then((result)=>{
+      this.responseData = result;
+      console.log("support list ", this.responseData);
+
+      for(var k in result){
+        for(var k2 in result[k]){
+             this.supList = [result[k]];
+        }
+      }
+      this.Support_list = [this.supList[0]];
+      console.log("support list array ", this.Support_list);
+    },(err)=>{
+
+    });
   }
 
   saveSupport(){

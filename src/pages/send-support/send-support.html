@@ -10,7 +10,7 @@
         <ion-item no-lines>
             <ion-label>Support</ion-label>
             <ion-select [(ngModel)]="support" (ionChange)="supportList()">
-                <ion-option placeholder='support' *ngFor="let items of Support_list">{{items}}</ion-option>
+                <ion-option placeholder='support' *ngFor="let items of Support_list[0]">{{items.rtvalue}}</ion-option>
                 <hr class="hr" />
             </ion-select>
         </ion-item>

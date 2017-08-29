@@ -14,20 +14,39 @@ export class SendRequestPage {
   userRequests: any;
   request: string;
   comment: any;
+  reqList: any;
   isBtnActive: boolean = false;
   responseData: any;
   userReq: string;
 
-  Request_items = ["laptop", "mobile", "simcard"];
+  Request_items = [];
 
   constructor(private loadCtrl: LoadingController, private authService: AuthServiceProvider, private toastCtrl: ToastController, private storage: Storage, public navCtrl: NavController, public navParams: NavParams) {
     const data = JSON.parse(localStorage.getItem('userData'));
     this.userDetails = data.userData;
+    this.getRequestList();
 
   }
 
   requestedItems(){
     //console.log(this.request);
+  }
+
+  getRequestList(){
+    this.authService.postData(this.userDetails, 'getRequest').then((result)=>{
+      this.responseData = result;
+      console.log("request list ", this.responseData);
+
+      for(var k in result){
+        for(var k2 in result[k]){
+             this.reqList = [result[k]];
+        }
+      }
+      this.Request_items = [this.reqList[0]];
+      console.log("request list array ", this.Request_items);
+    },(err)=>{
+
+    });
   }
 
   presentLoading(){
