@@ -3,12 +3,12 @@
         <ion-toolbar color="primary_light">
             <!-- <img src="../assets/images/blue1.png" class="menu_logo" alt="menu_logo"> -->
             <div class="user_info" *ngIf="isUserData; else userDetail ">
-                <div class="div_circle">
+                <!-- <div class="div_circle">
                     <!-- <ion-icon name="football"></ion-icon> -->
-                    <!-- <ion-avatar item-start class="avatar">
+                <!-- <ion-avatar item-start class="avatar">
                         <ion-icon class="avatar_icon" name="person"></ion-icon>
-                    </ion-avatar> -->
-                </div>
+                    </ion-avatar>
+                </div> -->
                 <h6 class="user_info_name">{{userDetails.username}}</h6><br>
                 <h6 class="user_info_email">{{userDetails.email}}</h6>
             </div>
